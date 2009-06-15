@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+  <path>interior.ac</path>
+
+  <animation>
+    <!-- Objets opaques -->
+    <object-name>interieur</object-name>
+    <object-name>inttour</object-name>
+
+    <!-- Objets transparents -->
+    <object-name>intvitres</object-name>
+  </animation>
+
+  <animation>
+    <type>shader</type>
+    <shader>chrome</shader>
+    <texture>shader.png</texture>
+    <object-name>intvitres</object-name>
+  </animation>
+
+  <animation>
+    <type>noshadow</type>
+    <object-name>intvitres</object-name>
+  </animation>
+
+  <!-- Tableau de bord -->
+  <model>
+    <path>Aircraft/Pond-Racer/Models/Interior/Panel/panel.xml</path>
+    <offsets>
+      <x-m> -0.524 </x-m>
+      <y-m>  0.000 </y-m>
+      <z-m>  0.049 </z-m>
+    </offsets>
+  </model>
+
+  <!-- Pilote -->
+  <model>
+    <path>Aircraft/Pond-Racer/Models/Pilot/pilot.xml</path>
+    <offsets>
+      <x-m> 0.326 </x-m>
+      <y-m> 0.000 </y-m>
+      <z-m> 0.039 </z-m>
+    </offsets>
+  </model>
+
+</PropertyList>
+
