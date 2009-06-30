@@ -22,6 +22,8 @@
     <object-name>ailes</object-name>
     <object-name>aileronG</object-name>
     <object-name>aileronD</object-name>
+    <object-name>voletG</object-name>
+    <object-name>voletD</object-name>
     <object-name>derive</object-name>
     <object-name>direction</object-name>
     <object-name>profondeur</object-name>
@@ -70,6 +72,8 @@
     <object-name>ailes</object-name>
     <object-name>aileronG</object-name>
     <object-name>aileronD</object-name>
+    <object-name>voletG</object-name>
+    <object-name>voletD</object-name>
     <object-name>derive</object-name>
     <object-name>direction</object-name>
     <object-name>profondeur</object-name>
@@ -305,7 +309,7 @@
     </axis>
   </animation>
 
-  <!-- Ailerons fonction ailerons -->
+  <!-- Ailerons -->
   <animation>
     <type>rotate</type>
     <object-name>aileronG</object-name>
@@ -336,34 +340,34 @@
     </axis>
   </animation>
 
-  <!-- Ailerons fonction volets -->
+  <!-- Volets -->
   <animation>
     <type>rotate</type>
-    <object-name>aileronG</object-name>
+    <object-name>voletG</object-name>
     <property>/surface-positions/flaperons-pos-norm</property>
     <factor>25.0</factor>
     <axis>
-      <x1-m> -1.621 </x1-m>
-      <y1-m> -4.159 </y1-m>
-      <z1-m>  0.139 </z1-m>
-      <x2-m> -1.025 </x2-m>
-      <y2-m> -2.115 </y2-m>
-      <z2-m>  0.016 </z2-m>
+      <x1-m> -0.844 </x1-m>
+      <y1-m> -1.215 </y1-m>
+      <z1-m> -0.072 </z1-m>
+      <x2-m> -0.737 </x2-m>
+      <y2-m> -0.287 </y2-m>
+      <z2-m> -0.139 </z2-m>
     </axis>
   </animation>
 
   <animation>
     <type>rotate</type>
-    <object-name>aileronD</object-name>
+    <object-name>voletD</object-name>
     <property>/surface-positions/flaperons-pos-norm</property>
     <factor>25.0</factor>
     <axis>
-      <x1-m> -1.025 </x1-m>
-      <y1-m>  2.115 </y1-m>
-      <z1-m>  0.016 </z1-m>
-      <x2-m> -1.621 </x2-m>
-      <y2-m>  4.159 </y2-m>
-      <z2-m>  0.139 </z2-m>
+      <x1-m> -0.737 </x1-m>
+      <y1-m>  0.287 </y1-m>
+      <z1-m> -0.139 </z1-m>
+      <x2-m> -0.844 </x2-m>
+      <y2-m>  1.215 </y2-m>
+      <z2-m> -0.072 </z2-m>
     </axis>
   </animation>
 
