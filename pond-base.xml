@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+  <sim include="Nasal/views.xml">
+ 
+    <author>Emmanuel BARANGER (3D/FDM)</author>
+    <aircraft-version>0.1</aircraft-version>
+    <status>0.1 Alpha</status>
+
+    <fuel-fraction>0.8</fuel-fraction>
+  
+    <model>
+      <path archive="y">Aircraft/Pond-Racer/Models/pond.xml</path>
+      <livery>
+        <file type="string">default</file>
+      </livery>
+    </model>
+
+    <sound>
+      <path>Aircraft/Pond-Racer/Sounds/pond-sound.xml</path>
+    </sound>
+
+    <startup>
+      <splash-texture>Aircraft/Pond-Racer/pond-splash.png</splash-texture>
+    </startup>
+  
+    <multiplay>
+      <chat_display>1</chat_display>
+      <generic>
+        <int type="int">0</int>
+        <int type="int">0</int>
+        <int type="int">0</int>
+        <int type="int">0</int>
+        <int type="int">0</int>
+        <int type="int">0</int>
+      </generic>
+    </multiplay>
+
+    <help>
+      <title>Hughes XF 11</title>
+      <key>
+        <name>d</name>
+        <desc>Open/Close canopy</desc>
+      </key>
+    </help>
+
+    <menubar include="Dialogs/pond-menu.xml"/>
+
+  </sim>
+
+  <input>
+    <keyboard include="Nasal/pond-keyboard.xml"/>
+  </input>
+ 
+  <nasal>
+    <pond> 
+      <file>Aircraft/Pond-Racer/Nasal/doors.nas</file>
+      <file>Aircraft/Pond-Racer/Nasal/light.nas</file>
+      <file>Aircraft/Pond-Racer/Nasal/liveries.nas</file>
+      <file>Aircraft/Pond-Racer/Nasal/immat.nas</file>
+    </pond>
+  </nasal>
+
+</PropertyList>

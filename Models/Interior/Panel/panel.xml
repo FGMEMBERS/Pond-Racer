@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+  <path>panel.ac</path>
+
+  <animation>
+    <!-- Objets opaques -->
+    <object-name>panel</object-name>
+
+    <!-- Objets transparents -->
+  </animation>
+
+  <!-- Ai -->
+  <model>
+    <path>Aircraft/Pond-Racer/Models/Interior/Panel/Instruments/ai/ai.xml</path>
+    <offsets>
+      <x-m> 0.356 </x-m>
+      <y-m> 0.000 </y-m>
+      <z-m> 0.142 </z-m>
+      <roll-deg>    0.000 </roll-deg>
+      <pitch-deg>   0.000 </pitch-deg>
+      <heading-deg> 0.000 </heading-deg>
+    </offsets>
+  </model>
+
+  <!-- Alt -->
+  <model>
+    <path>Aircraft/Pond-Racer/Models/Interior/Panel/Instruments/alt/alt.xml</path>
+    <offsets>
+      <x-m>  0.353 </x-m>
+      <y-m> -0.239 </y-m>
+      <z-m>  0.141 </z-m>
+      <roll-deg>    0.000 </roll-deg>
+      <pitch-deg>   0.000 </pitch-deg>
+      <heading-deg> 0.000 </heading-deg>
+    </offsets>
+  </model>
+
+  <!-- Turn -->
+  <model>
+    <path>Aircraft/Pond-Racer/Models/Interior/Panel/Instruments/Turn/Turn.xml</path>
+    <offsets>
+      <x-m>  0.356 </x-m>
+      <y-m> -0.239 </y-m>
+      <z-m> -0.003 </z-m>
+      <roll-deg>    0.000 </roll-deg>
+      <pitch-deg>   0.000 </pitch-deg>
+      <heading-deg> 0.000 </heading-deg>
+    </offsets>
+  </model>
+
+  <!-- Asi -->
+  <model>
+    <path>Aircraft/Pond-Racer/Models/Interior/Panel/Instruments/asi/asi.xml</path>
+    <offsets>
+      <x-m>  0.355 </x-m>
+      <y-m> -0.110 </y-m>
+      <z-m>  0.143 </z-m>
+      <roll-deg>    0.000 </roll-deg>
+      <pitch-deg>   0.000 </pitch-deg>
+      <heading-deg> 0.000 </heading-deg>
+    </offsets>
+  </model>
+
+  <!-- Man -->
+  <model>
+    <path>Aircraft/Pond-Racer/Models/Interior/Panel/Instruments/man/manL.xml</path>
+    <offsets>
+      <x-m> 0.355 </x-m>
+      <y-m> 0.120 </y-m>
+      <z-m> 0.143 </z-m>
+      <roll-deg>    0.000 </roll-deg>
+      <pitch-deg>   0.000 </pitch-deg>
+      <heading-deg> 0.000 </heading-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Pond-Racer/Models/Interior/Panel/Instruments/man/manR.xml</path>
+    <offsets>
+      <x-m> 0.355 </x-m>
+      <y-m> 0.220 </y-m>
+      <z-m> 0.143 </z-m>
+      <roll-deg>    0.000 </roll-deg>
+      <pitch-deg>   0.000 </pitch-deg>
+      <heading-deg> 0.000 </heading-deg>
+    </offsets>
+  </model>
+
+  <!-- Tac -->
+  <model>
+    <path>Aircraft/Pond-Racer/Models/Interior/Panel/Instruments/tach/tachL.xml</path>
+    <offsets>
+      <x-m> 0.355 </x-m>
+      <y-m> 0.120 </y-m>
+      <z-m> 0.030 </z-m>
+      <roll-deg>    0.000 </roll-deg>
+      <pitch-deg>   0.000 </pitch-deg>
+      <heading-deg> 0.000 </heading-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Pond-Racer/Models/Interior/Panel/Instruments/tach/tachR.xml</path>
+    <offsets>
+      <x-m> 0.355 </x-m>
+      <y-m> 0.220 </y-m>
+      <z-m> 0.030 </z-m>
+      <roll-deg>    0.000 </roll-deg>
+      <pitch-deg>   0.000 </pitch-deg>
+      <heading-deg> 0.000 </heading-deg>
+    </offsets>
+  </model>
+
+</PropertyList>
+

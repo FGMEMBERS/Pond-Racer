@@ -1,0 +1,544 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+<fx>
+
+  <!-- Engine 1 -->
+  <crank>
+    <name>engstart1</name>
+    <path>Aircraft/Pond-Racer/Sounds/engine_start.wav</path>
+    <condition>
+      <property>/engines/engine[0]/cranking</property>
+    </condition>
+    <position>
+      <x> -2.0 </x>
+      <y>  0.0 </y>
+      <z> -2.0 </z>
+    </position>
+    <volume>
+      <offset> 0.01 </offset>
+      <max> 0.010 </max>
+    </volume>
+  </crank>
+
+  <crank>
+    <name>crank1</name>
+    <mode>looped</mode>
+    <path>Sounds/cranking.wav</path>
+    <condition>
+      <and>
+        <property>/engines/engine[0]/cranking</property>
+        <not>
+          <property>/engines/engine[0]/running</property>
+        </not>
+      </and>
+    </condition>
+    <position>
+      <x> -2.0 </x>
+      <y>  0.0 </y>
+      <z> -2.0 </z>
+    </position>
+    <volume>
+      <offset> 0.5 </offset>
+    </volume>
+  </crank>
+
+  <crank>
+    <name>cough1</name>
+    <path>Sounds/coughing.wav</path>
+    <condition>
+      <property>/engines/engine[0]/running</property>
+    </condition>
+    <position>
+      <x> -2.0 </x>
+      <y>  0.0 </y>
+      <z> -2.0 </z>
+    </position>
+    <volume>
+      <offset> 0.3 </offset>
+    </volume>
+  </crank>
+
+  <!-- internal -->
+  <engine>
+    <name>engine1</name>
+    <mode>looped</mode>
+    <path>Aircraft/Pond-Racer/Sounds/engine_running.wav</path>
+    <condition>
+      <and>
+        <and>
+          <property>/engines/engine[0]/running</property>
+          <greater-than-equals>
+            <property>/engines/engine[0]/mp-osi</property>
+            <value> 6.2 </value>
+          </greater-than-equals>
+        </and>
+       <property>/sim/current-view/internal</property>
+      </and>
+    </condition>
+    <position>
+      <x> -2.0 </x>
+      <y>  0.0 </y>
+      <z> -2.0 </z>
+    </position>
+    <volume>
+      <property>/engines/engine[0]/mp-osi</property>
+      <factor> 0.009 </factor>
+      <min> 0.01 </min>
+      <max> 0.15 </max>
+      <offset> 0.04 </offset>
+    </volume>
+    <pitch>
+      <property>/engines/engine[0]/rpm</property>
+      <factor> 0.0004 </factor>
+      <min> 0.1 </min>
+      <max> 2.0 </max>
+      <offset> 0.3 </offset>
+    </pitch>
+  </engine>
+
+  <engine>
+    <name>idle1</name>
+    <mode>looped</mode>
+    <path>Aircraft/Pond-Racer/Sounds/engine_idle.wav</path>
+    <condition>
+      <and>
+        <and>
+          <property>/engines/engine[0]/running</property>
+          <less-than>
+            <property>/engines/engine[0]/mp-osi</property>
+            <value> 6.2 </value>
+          </less-than>
+        </and>
+        <property>/sim/current-view/internal</property>
+      </and>
+    </condition>
+    <position>
+      <x> -2.0 </x>
+      <y>  0.0 </y>
+      <z> -2.0 </z>
+    </position>
+    <volume>
+      <property>/engines/engine[0]/mp-osi</property>
+      <factor> 0.009 </factor>
+      <min> 0.005 </min>
+      <max> 0.02 </max>
+      <offset> 0.03 </offset>
+    </volume>
+    <pitch>
+      <property>/engines/engine[0]/rpm</property>
+      <factor> 0.0004 </factor>
+      <min> 0.1 </min>
+      <max> 2.0 </max>
+      <offset> 0.3 </offset>
+    </pitch>
+  </engine>
+
+  <!-- external -->
+  <engine>
+    <name>engine1 external</name>
+    <mode>looped</mode>
+    <path>Aircraft/Pond-Racer/Sounds/engine_running.wav</path>
+    <condition>
+      <and>
+        <and>
+          <property>/engines/engine[0]/running</property>
+          <greater-than-equals>
+            <property>/engines/engine[0]/mp-osi</property>
+            <value>6.2</value>
+          </greater-than-equals>
+        </and>
+        <not>
+          <property>/sim/current-view/internal</property>
+        </not>
+      </and>
+    </condition>
+    <position>
+      <x> -2.0 </x>
+      <y>  0.0 </y>
+      <z> -2.0 </z>
+    </position>
+    <volume>
+      <property>/engines/engine[0]/mp-osi</property>
+      <factor> 0.009 </factor>
+      <min> 0.02 </min>
+      <max> 0.30 </max>
+      <offset> 0.07 </offset>
+    </volume>
+    <pitch>
+      <property>/engines/engine[0]/rpm</property>
+      <factor> 0.0004 </factor>
+      <min> 0.1 </min>
+      <max> 2.0 </max>
+      <offset> 0.3 </offset>
+    </pitch>
+  </engine>
+
+  <engine>
+    <name>idle1 external</name>
+    <mode>looped</mode>
+    <path>Aircraft/Pond-Racer/Sounds/engine_idle.wav</path>
+    <condition>
+      <and>
+        <and>
+          <property>/engines/engine[0]/running</property>
+          <less-than>
+            <property>/engines/engine[0]/mp-osi</property>
+            <value> 6.2 </value>
+          </less-than>
+        </and>
+        <not>
+          <property>/sim/current-view/internal</property>
+        </not>
+      </and>
+    </condition>
+    <position>
+      <x> -2.0 </x>
+      <y>  0.0 </y>
+      <z> -2.0 </z>
+    </position>
+    <volume>
+      <property>/engines/engine[0]/mp-osi</property>
+      <factor> 0.009 </factor>
+      <min> 0.01 </min>
+      <max> 0.04 </max>
+      <offset> 0.05 </offset>
+    </volume>
+    <pitch>
+      <property>/engines/engine[0]/rpm</property>
+      <factor> 0.0004 </factor>
+      <min> 0.1 </min>
+      <max> 2.0 </max>
+      <offset> 0.3 </offset>
+    </pitch>
+  </engine>
+
+  <!-- Engine 2 -->
+  <crank>
+    <name>engstart1</name>
+    <path>Aircraft/Pond-Racer/Sounds/engine_start.wav</path>
+    <condition>
+      <property>/engines/engine[1]/cranking</property>
+    </condition>
+    <position>
+      <x> -2.0 </x>
+      <y>  0.0 </y>
+      <z> -2.0 </z>
+    </position>
+    <volume>
+      <offset> 0.01 </offset>
+      <max> 0.010 </max>
+    </volume>
+  </crank>
+
+  <crank>
+    <name>crank1</name>
+    <mode>looped</mode>
+    <path>Sounds/cranking.wav</path>
+    <condition>
+      <and>
+        <property>/engines/engine[1]/cranking</property>
+        <not>
+          <property>/engines/engine[1]/running</property>
+        </not>
+      </and>
+    </condition>
+    <position>
+      <x> -2.0 </x>
+      <y>  0.0 </y>
+      <z> -2.0 </z>
+    </position>
+    <volume>
+      <offset> 0.5 </offset>
+    </volume>
+  </crank>
+
+  <crank>
+    <name>cough1</name>
+    <path>Sounds/coughing.wav</path>
+    <condition>
+      <property>/engines/engine[1]/running</property>
+    </condition>
+    <position>
+      <x> -2.0 </x>
+      <y>  0.0 </y>
+      <z> -2.0 </z>
+    </position>
+    <volume>
+      <offset> 0.3 </offset>
+    </volume>
+  </crank>
+
+  <!-- internal -->
+  <engine>
+    <name>engine1</name>
+    <mode>looped</mode>
+    <path>Aircraft/Pond-Racer/Sounds/engine_running.wav</path>
+    <condition>
+      <and>
+        <and>
+          <property>/engines/engine[1]/running</property>
+          <greater-than-equals>
+            <property>/engines/engine[1]/mp-osi</property>
+            <value> 6.2 </value>
+          </greater-than-equals>
+        </and>
+       <property>/sim/current-view/internal</property>
+      </and>
+    </condition>
+    <position>
+      <x> -2.0 </x>
+      <y>  0.0 </y>
+      <z> -2.0 </z>
+    </position>
+    <volume>
+      <property>/engines/engine[1]/mp-osi</property>
+      <factor> 0.009 </factor>
+      <min> 0.01 </min>
+      <max> 0.15 </max>
+      <offset> 0.04 </offset>
+    </volume>
+    <pitch>
+      <property>/engines/engine[1]/rpm</property>
+      <factor> 0.0004 </factor>
+      <min> 0.1 </min>
+      <max> 2.0 </max>
+      <offset> 0.3 </offset>
+    </pitch>
+  </engine>
+
+  <engine>
+    <name>idle1</name>
+    <mode>looped</mode>
+    <path>Aircraft/Pond-Racer/Sounds/engine_idle.wav</path>
+    <condition>
+      <and>
+        <and>
+          <property>/engines/engine[1]/running</property>
+          <less-than>
+            <property>/engines/engine[1]/mp-osi</property>
+            <value> 6.2 </value>
+          </less-than>
+        </and>
+        <property>/sim/current-view/internal</property>
+      </and>
+    </condition>
+    <position>
+      <x> -2.0 </x>
+      <y>  0.0 </y>
+      <z> -2.0 </z>
+    </position>
+    <volume>
+      <property>/engines/engine[1]/mp-osi</property>
+      <factor> 0.009 </factor>
+      <min> 0.005 </min>
+      <max> 0.02 </max>
+      <offset> 0.03 </offset>
+    </volume>
+    <pitch>
+      <property>/engines/engine[1]/rpm</property>
+      <factor> 0.0004 </factor>
+      <min> 0.1 </min>
+      <max> 2.0 </max>
+      <offset> 0.3 </offset>
+    </pitch>
+  </engine>
+
+  <!-- external -->
+  <engine>
+    <name>engine1 external</name>
+    <mode>looped</mode>
+    <path>Aircraft/Pond-Racer/Sounds/engine_running.wav</path>
+    <condition>
+      <and>
+        <and>
+          <property>/engines/engine[1]/running</property>
+          <greater-than-equals>
+            <property>/engines/engine[1]/mp-osi</property>
+            <value>6.2</value>
+          </greater-than-equals>
+        </and>
+        <not>
+          <property>/sim/current-view/internal</property>
+        </not>
+      </and>
+    </condition>
+    <position>
+      <x> -2.0 </x>
+      <y>  0.0 </y>
+      <z> -2.0 </z>
+    </position>
+    <volume>
+      <property>/engines/engine[1]/mp-osi</property>
+      <factor> 0.009 </factor>
+      <min> 0.02 </min>
+      <max> 0.30 </max>
+      <offset> 0.07 </offset>
+    </volume>
+    <pitch>
+      <property>/engines/engine[1]/rpm</property>
+      <factor> 0.0004 </factor>
+      <min> 0.1 </min>
+      <max> 2.0 </max>
+      <offset> 0.3 </offset>
+    </pitch>
+  </engine>
+
+  <engine>
+    <name>idle1 external</name>
+    <mode>looped</mode>
+    <path>Aircraft/Pond-Racer/Sounds/engine_idle.wav</path>
+    <condition>
+      <and>
+        <and>
+          <property>/engines/engine[1]/running</property>
+          <less-than>
+            <property>/engines/engine[1]/mp-osi</property>
+            <value> 6.2 </value>
+          </less-than>
+        </and>
+        <not>
+          <property>/sim/current-view/internal</property>
+        </not>
+      </and>
+    </condition>
+    <position>
+      <x> -2.0 </x>
+      <y>  0.0 </y>
+      <z> -2.0 </z>
+    </position>
+    <volume>
+      <property>/engines/engine[1]/mp-osi</property>
+      <factor> 0.009 </factor>
+      <min> 0.01 </min>
+      <max> 0.04 </max>
+      <offset> 0.05 </offset>
+    </volume>
+    <pitch>
+      <property>/engines/engine[1]/rpm</property>
+      <factor> 0.0004 </factor>
+      <min> 0.1 </min>
+      <max> 2.0 </max>
+      <offset> 0.3 </offset>
+    </pitch>
+  </engine>
+
+  <!-- ********************************************* -->
+  <flap>
+    <name>flaps</name>
+    <mode>in-transit</mode>
+    <path>Aircraft/Pond-Racer/Sounds/flap_move.wav</path>
+    <property>/surface-positions/flap-pos-norm</property>
+    <volume>
+      <factor> 0.1 </factor>
+    </volume>
+    <reference-dist> 10.0 </reference-dist>
+    <max-dist> 20.0 </max-dist>
+  </flap>
+
+  <wind>
+    <name>wind</name>
+    <mode>looped</mode>
+    <path>Sounds/wind.wav</path>
+    <property>/velocities/airspeed-kt</property>
+    <volume>
+      <property>/position/altitude-ft</property>
+      <factor> -0.000015 </factor>
+      <offset> 1.0 </offset>
+      <min> 0.1 </min>
+      <max> 1.0 </max>
+    </volume>
+    <volume>
+      <property>/velocities/airspeed-kt</property>
+      <factor> 0.0015 </factor>
+      <min> 0.01 </min>
+      <max> 0.04 </max>
+    </volume>
+    <pitch>
+      <property>/velocities/airspeed-kt</property>
+      <factor> 0.01 </factor>
+      <offset> 1.25 </offset>
+    </pitch>
+  </wind>
+ 
+  <stall>
+    <name>stall</name>
+    <path>Aircraft/Pond-Racer/Sounds/stall_horn.wav</path>
+    <property>/sim/alarms/stall-warning</property>
+    <volume>
+      <property>/velocities/airspeed-kt</property>
+      <min> 30.0 </min>
+    </volume>
+    <reference-dist> 10.0 </reference-dist>
+    <max-dist> 20.0 </max-dist>
+  </stall>
+
+  <!-- Toggle Switches -->
+  <switch>
+    <name>click on</name>
+    <mode>once</mode>
+    <path>Sounds/click.wav</path>
+    <condition>
+      <property>sim/Sounds/switch</property>
+    </condition>
+    <volume>
+      <offset> 0.7 </offset>
+    </volume>
+    <position>
+      <x> -0.5 </x>
+      <y>  0.0 </y>
+      <z>  0.0 </z>
+    </position>
+    <reference-dist> 2.0 </reference-dist>
+    <max-dist> 4.0 </max-dist>
+  </switch>
+
+  <switch>
+    <name>click off</name>
+    <mode>once</mode>
+    <path>Sounds/click.wav</path>
+    <condition>
+      <not>
+        <property>sim/Sounds/switch</property>
+      </not>
+    </condition>
+    <volume>
+      <offset> 0.7 </offset>
+    </volume>
+    <position>
+      <x> -0.5 </x>
+      <y>  0.0 </y>
+      <z>  0.0 </z>
+    </position>
+    <reference-dist> 2.0 </reference-dist>
+    <max-dist> 4.0 </max-dist>
+  </switch>
+
+  <rain>
+    <name>rain</name>
+    <mode>looped</mode>
+    <path>Aircraft/Pond-Racer/Sounds/rain_canopy.wav</path>
+    <condition>
+      <greater-than>
+        <property>/environment/metar/rain-norm</property>
+        <value> 0.2 </value>
+      </greater-than>
+    </condition>
+    <volume>
+      <property>/environment/metar/rain-norm</property>
+      <factor> 1.00 </factor>
+      <offset> 0.00 </offset>
+      <min> 0.4 </min>
+      <max> 0.9 </max>
+    </volume>
+    <pitch>
+      <property>/velocities/airspeed-kt</property>
+      <factor> 0.001 </factor>
+      <offset> 1.0 </offset>
+    </pitch>
+  </rain>
+
+</fx>
+ 
+</PropertyList>
