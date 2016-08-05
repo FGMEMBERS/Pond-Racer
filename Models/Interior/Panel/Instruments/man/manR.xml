@@ -1,43 +1,56 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
 <PropertyList>
-
+  
   <path>man.ac</path>
-
+  
+  <animation>
+    <object-name>fond</object-name>
+    <object-name>Face</object-name>
+    <object-name>Needle1</object-name>
+    
+    <object-name>vitre</object-name>
+  </animation>
+  
+  <!-- working for Rembrandt -->
+  <effect>
+    <inherits-from>Aircraft/Pond-Racer/Models/Effects/glass/glass</inherits-from>
+    <object-name>vitre</object-name>
+  </effect>
+  
   <animation>
     <type>material</type>
     <object-name>Face</object-name>
     <object-name>Needle1</object-name>
     <emission>
+      <factor-prop>/systems/electrical/outputs/instrument-lights</factor-prop>
       <red>   0.50 </red>
       <green> 0.25 </green>
       <blue>  0.25 </blue>
-      <factor-prop>/systems/electrical/outputs/instrument-lights</factor-prop>
     </emission>
   </animation>
-
- <animation>
-  <type>rotate</type>
-  <object-name>Needle1</object-name>
-  <property>/engines/engine[1]/mp-osi</property>
-  <interpolation>
-    <entry><ind>   0 </ind><dep>   0 </dep></entry>
-    <entry><ind>  20 </ind><dep>  20 </dep></entry>
-    <entry><ind>  30 </ind><dep>  62 </dep></entry>
-    <entry><ind>  40 </ind><dep> 103 </dep></entry>
-    <entry><ind>  50 </ind><dep> 145 </dep></entry>
-    <entry><ind>  60 </ind><dep> 188 </dep></entry>
-    <entry><ind>  70 </ind><dep> 230 </dep></entry>
-    <entry><ind>  80 </ind><dep> 271 </dep></entry>
-    <entry><ind>  90 </ind><dep> 310 </dep></entry>
-    <entry><ind> 100 </ind><dep> 351 </dep></entry>
-  </interpolation>
-  <axis>
-    <x> -1.000 </x>
-    <y>  0.000 </y>
-    <z>  0.000 </z>
-  </axis>
- </animation>
-
+  
+  <animation>
+    <type>rotate</type>
+    <object-name>Needle1</object-name>
+    <property>/engines/engine[1]/mp-osi</property>
+    <interpolation>
+      <entry><ind>   0 </ind><dep>   0 </dep></entry>
+      <entry><ind>  20 </ind><dep>  20 </dep></entry>
+      <entry><ind>  30 </ind><dep>  62 </dep></entry>
+      <entry><ind>  40 </ind><dep> 103 </dep></entry>
+      <entry><ind>  50 </ind><dep> 145 </dep></entry>
+      <entry><ind>  60 </ind><dep> 188 </dep></entry>
+      <entry><ind>  70 </ind><dep> 230 </dep></entry>
+      <entry><ind>  80 </ind><dep> 271 </dep></entry>
+      <entry><ind>  90 </ind><dep> 310 </dep></entry>
+      <entry><ind> 100 </ind><dep> 351 </dep></entry>
+    </interpolation>
+    <axis>
+      <x> -1 </x>
+      <y>  0 </y>
+      <z>  0 </z>
+    </axis>
+  </animation>
+  
 </PropertyList>
-
-
