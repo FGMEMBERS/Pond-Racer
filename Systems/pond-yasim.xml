@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!-- Rutan Pond Racer - 2009 BARANGER Emmanuel
+
+     Sources : https://en.wikipedia.org/wiki/Scaled_Composites_Pond_Racer
+
+     Les donnees qui suivent ne sont absolument pas formelles. Tres peu d'informations existe (ou je ne les ai pas trouve) sur le net.
+     J'ai, par consequent, extrapole en fonction des donnees que j'ai reussi a trouver.
+
+     Wingspan     : 25 ft 4.75 in                            (  7.7407 m        )
+     Length       : 20 ft                                    (  6.1000 m        )
+     Empty weight : 3500 lb                                  (    1588 kg       )
+     Moteur       : 2 Electromotive-Nissan VG-30 3-liter GTP (    1000 hp  each )
+     Vitesse max  : 644 km/h                                 (   347.6 kt       )
+-->
+<airplane mass="3500" version="YASIM_VERSION_CURRENT">
+
+  <approach speed="120" aoa="2" fuel="0.3">
+    <control-setting axis="/controls/engines/engine[0]/throttle" value="0.2"/>
+    <control-setting axis="/controls/engines/engine[0]/mixture" value="1"/>
+    <control-setting axis="/controls/engines/engine[0]/propeller-pitch" value="1"/>
+    <control-setting axis="/controls/engines/engine[1]/throttle" value="0.2"/>
+    <control-setting axis="/controls/engines/engine[1]/mixture" value="1"/>
+    <control-setting axis="/controls/engines/engine[1]/propeller-pitch" value="1"/>
+    <control-setting axis="/controls/gear/gear-down" value="1"/>
+  </approach>
+
+  <cruise speed="320" alt="10000" fuel="0.8"> 
+    <control-setting axis="/controls/engines/engine[0]/throttle" value="0.8"/>
+    <control-setting axis="/controls/engines/engine[0]/mixture" value="0.8"/>
+    <control-setting axis="/controls/engines/engine[0]/propeller-pitch" value="0.8"/>
+    <control-setting axis="/controls/engines/engine[1]/throttle" value="0.8"/>
+    <control-setting axis="/controls/engines/engine[1]/mixture" value="0.8"/>
+    <control-setting axis="/controls/engines/engine[1]/propeller-pitch" value="0.8"/>
+    <control-setting axis="/controls/gear/gear-down" value="0"/>
+  </cruise>
+
+  <cockpit x="-0.526" y="0.000" z="0.472"/>
+
+  <!-- Fuselage -->
+  <fuselage ax="0.950" ay="0" az="0.055" bx="-3.650" by="0" bz="0.055" width="0.874" taper="0.4" midpoint="0.4"/>
+
+  <!-- bol gauche -->
+  <fuselage ax=" 3.742" ay=" 1.563" az="-0.144" bx=" 3.136" by=" 1.563" bz="-0.144" width="0.642" taper="0.1" midpoint="1"/>
+  <!-- moteur gauche -->
+  <fuselage ax=" 3.136" ay=" 1.563" az="-0.144" bx=" 2.940" by=" 1.563" bz="-0.144" width="0.842" taper="0.8" midpoint="1"/>
+  <fuselage ax=" 2.940" ay=" 1.563" az="-0.144" bx=" 1.711" by=" 1.563" bz="-0.144" width="0.842" taper="0.8" midpoint="0"/>
+  <fuselage ax=" 1.711" ay=" 1.563" az="-0.144" bx="-0.708" by=" 1.563" bz="-0.144" width="0.680" taper="1.0" midpoint="0"/>
+  <fuselage ax="-0.708" ay=" 1.563" az="-0.144" bx="-3.314" by=" 1.563" bz="-0.144" width="0.680" taper="0.1" midpoint="0"/>
+
+  <!-- bol droit -->
+  <fuselage ax=" 3.742" ay="-1.563" az="-0.144" bx=" 3.136" by="-1.563" bz="-0.144" width="0.642" taper="0.1" midpoint="1"/>
+  <!-- moteur droit -->
+  <fuselage ax=" 3.136" ay="-1.563" az="-0.144" bx=" 2.940" by="-1.563" bz="-0.144" width="0.842" taper="0.8" midpoint="1"/>
+  <fuselage ax=" 2.940" ay="-1.563" az="-0.144" bx=" 1.711" by="-1.563" bz="-0.144" width="0.842" taper="0.8" midpoint="0"/>
+  <fuselage ax=" 1.711" ay="-1.563" az="-0.144" bx="-0.708" by="-1.563" bz="-0.144" width="0.680" taper="1.0" midpoint="0"/>
+  <fuselage ax="-0.708" ay="-1.563" az="-0.144" bx="-3.314" by="-1.563" bz="-0.144" width="0.680" taper="0.1" midpoint="0"/>
+  
+  <!-- Aile -->
+  <!-- Au cours de mes lectures, j ai vu que les volets sortaient conjointement avec le train. ? -->
+  <wing x="0.893" y="0" z="-0.076"
+        chord="1.243"
+        length="5"
+        taper="0.40"
+        dihedral="3"
+        sweep="-12"
+        camber="0.008">
+        <stall aoa="20" width="1" peak="1.5"/>
+        <flap0 start="0.060" end="0.230" lift="1.4" drag="2.0"/>
+        <flap1 start="0.437" end="0.856" lift="1.2" drag="1.1"/>
+
+        <control-input  control="FLAP0" axis="/controls/gear/gear-down"/>
+        <control-input  control="FLAP1" axis="/controls/flight/aileron" split="true"/>
+        <control-input  control="FLAP1" axis="/controls/flight/aileron-trim" split="true"/>
+
+        <control-output control="FLAP0" prop="/surface-positions/flaperons-pos-norm"/>
+        <control-output control="FLAP1" side="left"  prop="/surface-positions/left-aileron-pos-norm"/>
+        <control-output control="FLAP1" side="right" prop="/surface-positions/right-aileron-pos-norm"/>
+        
+        <control-speed  control="FLAP0" transition-time="5"/>
+  </wing>
+
+  <hstab x="-2.676" y="0" z="-0.137"
+         chord="0.718"
+         length="1.525"
+         taper="1">
+         <stall aoa="16" width="1" peak="1.6"/>
+         <flap0 start="0" end="0.95" lift="1.2" drag="1.1"/>
+
+         <control-input  control="FLAP0" axis="/controls/flight/elevator"/>
+         <control-input  control="FLAP0" axis="/controls/flight/elevator-trim"/>
+
+         <control-output control="FLAP0" prop="/surface-positions/elevator-pos-norm"/>
+  </hstab>
+
+  <vstab x="-2.991" y="0" z="-0.203"
+         chord="1.243"
+         length="2"
+         taper="0.38"
+         sweep="20">
+         <stall aoa="16" width="1" peak="1.6"/>
+         <flap0 start="0" end="1" lift="1.2" drag="1.1"/>
+
+         <control-input  control="FLAP0" axis="/controls/flight/rudder" invert="true"/>
+         <control-input  control="FLAP0" axis="/controls/flight/rudder-trim" invert="true"/>
+
+         <control-output control="FLAP0" prop="/surface-positions/rudder-pos-norm"/>
+  </vstab>
+
+  <vstab x="-3.016" y="1.563" z="-0.126" 
+         chord="0.624"
+         length="0.60"
+         taper="0.74"
+         sweep="10"
+         dihedral="45">
+  </vstab>
+
+  <vstab x="-3.016" y="1.563" z="-0.126" 
+         chord="0.624"
+         length="0.32"
+         taper="0.78"
+         sweep="14"
+         dihedral="312">
+  </vstab>
+
+  <vstab x="-3.016" y="-1.563" z="-0.126" 
+         chord="0.624"
+         length="0.60"
+         taper="0.74"
+         sweep="10"
+         dihedral="135">
+  </vstab>
+
+  <vstab x="-3.016" y="-1.563" z="-0.126" 
+         chord="0.624"
+         length="0.32"
+         taper="0.78"
+         sweep="14"
+         dihedral="228">
+  </vstab>
+
+  <!-- Engines   source            : http://www.motoiq.com/MagazineArticles/ID/1508/Engine-Tech-Building-the-Nissan-VG30DETT-part-1.aspx
+                                     https://en.wikipedia.org/wiki/Nissan_VG_engine
+
+                 name              : Electramotive VG30 GTP
+                 type              : 60-degree V6
+                 power cruise      :   1000 hp at 2600 rpm at 6400 ft (1950 m)
+                 weight            : 
+                 displacement      : 3.3 L ( 3275 cc / 1289.37 in 3)
+                 compression       : 8.5:1
+  min-rpm="100"
+  max-rpm="5000"
+  -->
+  <!-- Engine Left -->
+  <propeller x="2.562" y="1.563" z="-0.148"
+             radius="1.24"
+             mass="580"
+             moment="5"
+             cruise-speed="320"
+             cruise-power="900"
+             cruise-rpm="4500"
+             cruise-alt="0"
+             contra="1">
+             <actionpt x="3.234" y="1.563" z="-0.145"/>
+             <control-input axis="/controls/engines/engine[0]/propeller-pitch" control="ADVANCE"/>
+             <piston-engine eng-power="1000"
+                            eng-rpm="6400"
+                            displacement="1289.37"
+                            compression="8.5">
+                            <control-input axis="/controls/engines/engine[0]/throttle" control="THROTTLE"/>
+                            <control-input axis="/controls/engines/engine[0]/starter" control="STARTER"/>
+                            <control-input axis="/controls/engines/engine[0]/magnetos" control="MAGNETOS"/>
+                            <control-input axis="/controls/engines/engine[0]/mixture" control="MIXTURE"/>
+             </piston-engine>
+  </propeller>
+
+  <!-- Engine Right -->
+  <propeller x="2.562" y="-1.563" z="-0.148"
+             radius="1.24"
+             mass="580"
+             moment="-5"
+             cruise-speed="320"
+             cruise-power="900"
+             cruise-rpm="4500"
+             cruise-alt="0"
+             contra="1">
+             <actionpt x="3.234" y="-1.563" z="-0.145"/>
+             <control-input control="ADVANCE" axis="/controls/engines/engine[1]/propeller-pitch"/>
+             <piston-engine eng-power="1000"
+                            eng-rpm="6400"
+                            displacement="1289.37"
+                            compression="8.5">
+                            <control-input control="THROTTLE" axis="/controls/engines/engine[1]/throttle"/>
+                            <control-input control="STARTER"  axis="/controls/engines/engine[1]/starter"/>
+                            <control-input control="MAGNETOS" axis="/controls/engines/engine[1]/magnetos"/>
+                            <control-input control="MIXTURE"  axis="/controls/engines/engine[1]/mixture"/>
+             </piston-engine>
+  </propeller>
+
+  <!-- Roue gauche -->
+  <gear x="1.70431" y="1.563" z="-1.64591"
+        compression="0.4"
+        spring="0.8"
+        damp="1.2"
+        sfric="1"
+        dfric="1">
+        <control-input  control="BRAKE"  axis="/controls/gear/brake-left"/>
+        <control-input  control="BRAKE"  axis="/controls/gear/brake-parking"/>
+        <control-input  control="EXTEND" axis="/controls/gear/gear-down"/>
+
+        <control-output control="EXTEND" prop="/gear/gear[0]/position-norm"/>
+        
+        <control-speed control="EXTEND" transition-time="5"/>
+  </gear>
+
+  <!-- Roue droite -->
+  <gear x="1.70431" y="-1.563" z="-1.64591"
+        compression="0.4"
+        spring="0.8"
+        damp="1.2"
+        sfric="1"
+        dfric="1">
+        <control-input  control="BRAKE"  axis="/controls/gear/brake-right"/>
+        <control-input  control="BRAKE"  axis="/controls/gear/brake-parking"/>
+        <control-input  control="EXTEND" axis="/controls/gear/gear-down"/>
+
+        <control-output control="EXTEND" prop="/gear/gear[1]/position-norm"/>
+        
+        <control-speed control="EXTEND" transition-time="5"/>
+  </gear>
+
+  <!-- Roulette de queue -->
+  <gear x="-3.057" y="0" z="-0.590"
+        compression="0.3"
+        spring="0.8"
+        damp="1.2"
+        sfric="1"
+        dfric="1">
+        <control-input control="STEER" axis="/controls/flight/rudder" src0="-1" src1="1" dst0="0.25" dst1="-0.25"/>
+  </gear>
+
+  <tank x="0.9" y=" 1.5" z="-0.076" capacity="500"/>
+  <tank x="0.9" y="-1.5" z="-0.076" capacity="500"/>
+  
+</airplane>
