@@ -1,0 +1,417 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+  
+  <fx>
+    
+    <!-- Engine 1 -->
+    <crank>
+      <name>engstart1</name>
+      <path>Aircraft/Pond-Racer/Sounds/engine_start.wav</path>
+      <condition>
+        <property>/engines/engine[0]/cranking</property>
+      </condition>
+      <position>
+        <x> -2 </x>
+        <y> -2 </y>
+        <z> -2 </z>
+      </position>
+      <volume> 
+        <property>/orientation/alpha-deg</property>
+        <type>log</type>
+        <min>0.5</min>
+        <max>1.0</max>
+      </volume>
+      <volume> 
+        <factor>1.2</factor>
+        <max>1.0</max>
+      </volume>
+      <reference-dist>100</reference-dist>
+      <max-dist>1000</max-dist>
+    </crank>
+    
+    <crank>
+      <name>crank1</name>
+      <mode>looped</mode>
+      <path>Aircraft/Pond-Racer/Sounds/cranking.wav</path>
+      <condition>
+        <and>
+          <property>/engines/engine[0]/cranking</property>
+          <not>
+            <property>/engines/engine[0]/running</property>
+          </not>
+        </and>
+      </condition>
+      <position>
+        <x> -2 </x>
+        <y> -2 </y>
+        <z> -2 </z>
+      </position>
+      <volume> 
+        <property>/orientation/alpha-deg</property>
+        <type>log</type>
+        <min>0.5</min>
+        <max>1.0</max>
+      </volume>
+      <volume> 
+        <factor>1.2</factor>
+        <max>1.0</max>
+      </volume>
+      <reference-dist>100</reference-dist>
+      <max-dist>1000</max-dist>
+    </crank>
+    
+    <crank>
+      <name>cough1</name>
+      <path>Aircraft/Pond-Racer/Sounds/coughing.wav</path>
+      <condition>
+        <property>/engines/engine[0]/running</property>
+      </condition>
+      <position>
+        <x> -2 </x>
+        <y> -2 </y>
+        <z> -2 </z>
+      </position>
+      <volume> 
+        <property>/orientation/alpha-deg</property>
+        <type>log</type>
+        <min>0.5</min>
+        <max>1.0</max>
+      </volume>
+      <volume> 
+        <factor>1.2</factor>
+        <max>1.0</max>
+      </volume>
+      <reference-dist>100</reference-dist>
+      <max-dist>1000</max-dist>
+    </crank>
+    
+    <engine>
+      <name>idle1 external</name>
+      <mode>looped</mode>
+      <path>Aircraft/Pond-Racer/Sounds/engine_idle.wav</path>
+      <condition> 
+        <property>/engines/engine[0]/running</property>
+        <less-than> 
+          <property>/engines/engine[0]/rpm</property>
+          <value>2500</value>
+        </less-than>
+      </condition>
+      <position>
+        <x> -2 </x>
+        <y> -2 </y>
+        <z> -2 </z>
+      </position>
+      <volume> 
+        <property>/orientation/alpha-deg</property>
+        <type>log</type>
+        <min>1.0</min>
+        <max>1.5</max>
+      </volume>
+      <volume> 
+        <property>/sim/current-view/internal</property>
+        <offset>1.0</offset>
+        <factor>-0.4</factor>
+      </volume>
+      <pitch> 
+        <property>/engines/engine[0]/rpm</property>
+        <factor>0.0009496</factor>
+        <min>0.6</min>
+        <max>2.0</max>
+        <offset>0</offset>
+      </pitch>
+      <reference-dist>100</reference-dist>
+      <max-dist>1000</max-dist>
+    </engine>
+    
+    <engine>
+      <name>engine1 external</name>
+      <mode>looped</mode>
+      <path>Aircraft/Pond-Racer/Sounds/engine_running.wav</path>
+      <condition> 
+        <property>/engines/engine[0]/running</property>
+        <greater-than-equals> 
+          <property>/engines/engine[0]/rpm</property>
+          <value>2500</value>
+        </greater-than-equals>
+      </condition>
+      <position>
+        <x> -2 </x>
+        <y> -2 </y>
+        <z> -2 </z>
+      </position>
+      <volume> 
+        <property>/orientation/alpha-deg</property>
+        <type>log</type>
+        <min>1.0</min>
+        <max>1.5</max>
+      </volume>
+      <volume> 
+        <property>/sim/current-view/internal</property>
+        <offset>1.0</offset>
+        <factor>-0.4</factor>
+      </volume>
+      <pitch> 
+        <property>/engines/engine[0]/rpm</property>
+        <factor>0.0006697</factor>
+        <min>0.3</min>
+        <max>2.0</max>
+        <offset>0</offset>
+      </pitch>
+      <reference-dist>100</reference-dist>
+      <max-dist>1000</max-dist>
+    </engine>
+    
+    <!-- Engine 2 -->
+    <crank>
+      <name>engstart1</name>
+      <path>Aircraft/Pond-Racer/Sounds/engine_start.wav</path>
+      <condition>
+        <property>/engines/engine[1]/cranking</property>
+      </condition>
+      <position>
+        <x> -2 </x>
+        <y>  2 </y>
+        <z> -2 </z>
+      </position>
+      <volume> 
+        <property>/orientation/alpha-deg</property>
+        <type>log</type>
+        <min>0.5</min>
+        <max>1.0</max>
+      </volume>
+      <volume> 
+        <factor>1.2</factor>
+        <max>1.0</max>
+      </volume>
+      <reference-dist>100</reference-dist>
+      <max-dist>1000</max-dist>
+    </crank>
+    
+    <crank>
+      <name>crank1</name>
+      <mode>looped</mode>
+      <path>Aircraft/Pond-Racer/Sounds/cranking.wav</path>
+      <condition>
+        <and>
+          <property>/engines/engine[1]/cranking</property>
+          <not>
+            <property>/engines/engine[1]/running</property>
+          </not>
+        </and>
+      </condition>
+      <position>
+        <x> -2 </x>
+        <y>  2 </y>
+        <z> -2 </z>
+      </position>
+      <volume> 
+        <property>/orientation/alpha-deg</property>
+        <type>log</type>
+        <min>0.5</min>
+        <max>1.0</max>
+      </volume>
+      <volume> 
+        <factor>1.2</factor>
+        <max>1.0</max>
+      </volume>
+      <reference-dist>100</reference-dist>
+      <max-dist>1000</max-dist>
+    </crank>
+    
+    <crank>
+      <name>cough1</name>
+      <path>Aircraft/Pond-Racer/Sounds/coughing.wav</path>
+      <condition>
+        <property>/engines/engine[1]/running</property>
+      </condition>
+      <position>
+        <x> -2 </x>
+        <y>  2 </y>
+        <z> -2 </z>
+      </position>
+      <volume> 
+        <property>/orientation/alpha-deg</property>
+        <type>log</type>
+        <min>0.5</min>
+        <max>1.0</max>
+      </volume>
+      <volume> 
+        <factor>1.2</factor>
+        <max>1.0</max>
+      </volume>
+      <reference-dist>100</reference-dist>
+      <max-dist>1000</max-dist>
+    </crank>
+    
+    <engine>
+      <name>idle1 external</name>
+      <mode>looped</mode>
+      <path>Aircraft/Pond-Racer/Sounds/engine_idle.wav</path>
+      <condition> 
+        <property>/engines/engine[1]/running</property>
+        <less-than> 
+          <property>/engines/engine[1]/rpm</property>
+          <value>2500</value>
+        </less-than>
+      </condition>
+      <position>
+        <x> -2 </x>
+        <y>  2 </y>
+        <z> -2 </z>
+      </position>
+      <volume> 
+        <property>/orientation/alpha-deg</property>
+        <type>log</type>
+        <min>1.0</min>
+        <max>1.5</max>
+      </volume>
+      <volume> 
+        <property>/sim/current-view/internal</property>
+        <offset>1.0</offset>
+        <factor>-0.4</factor>
+      </volume>
+      <pitch> 
+        <property>/engines/engine[1]/rpm</property>
+        <factor>0.0009496</factor>
+        <min>0.6</min>
+        <max>2.0</max>
+        <offset>0</offset>
+      </pitch>
+      <reference-dist>100</reference-dist>
+      <max-dist>1000</max-dist>
+    </engine>
+    
+    <engine>
+      <name>engine1 external</name>
+      <mode>looped</mode>
+      <path>Aircraft/Pond-Racer/Sounds/engine_running.wav</path>
+      <condition> 
+        <property>/engines/engine[1]/running</property>
+        <greater-than-equals> 
+          <property>/engines/engine[1]/rpm</property>
+          <value>2500</value>
+        </greater-than-equals>
+      </condition>
+      <position>
+        <x> -2 </x>
+        <y>  2 </y>
+        <z> -2 </z>
+      </position>
+      <volume> 
+        <property>/orientation/alpha-deg</property>
+        <type>log</type>
+        <min>1.0</min>
+        <max>1.5</max>
+      </volume>
+      <volume> 
+        <property>/sim/current-view/internal</property>
+        <offset>1.0</offset>
+        <factor>-0.4</factor>
+      </volume>
+      <pitch> 
+        <property>/engines/engine[1]/rpm</property>
+        <factor>0.0006697</factor>
+        <min>0.3</min>
+        <max>2.0</max>
+        <offset>0</offset>
+      </pitch>
+      <reference-dist>100</reference-dist>
+      <max-dist>1000</max-dist>
+    </engine>
+    
+    <!-- ********************************************* -->
+    <flap>
+      <name>flaps</name>
+      <mode>in-transit</mode>
+      <path>Aircraft/Pond-Racer/Sounds/flap_move.wav</path>
+      <property>/surface-positions/flaperons-pos-norm</property>
+      <volume>
+        <factor> 0.1 </factor>
+      </volume>
+      <reference-dist> 10.0 </reference-dist>
+      <max-dist> 20.0 </max-dist>
+    </flap>
+    
+    <rumble>
+      <name>rumble</name>
+      <mode>looped</mode>
+      <path>Sounds/rumble.wav</path>
+      <condition>
+        <or>
+          <property>/gear/gear[0]/wow</property>
+          <property>/gear/gear[1]/wow</property>
+          <property>/gear/gear[2]/wow</property>
+        </or>
+      </condition>
+      <volume>
+        <property>/velocities/airspeed-kt</property>
+        <type>log</type>
+        <factor>0.25</factor>
+      </volume>
+      <reference-dist>100</reference-dist>
+      <max-dist>1000</max-dist>
+    </rumble>
+    
+    <gear>
+      <name>gear</name>
+      <mode>in-transit</mode>
+      <path>Aircraft/Pond-Racer/Sounds/gears.wav</path>
+      <property>/gear/gear[0]/position-norm</property>
+      <reference-dist>100</reference-dist>
+      <max-dist>1000</max-dist>
+    </gear>
+    
+    <gear>
+      <name>gear-lock</name>
+      <path>Sounds/gear-lck.wav</path>
+      <condition>
+        <greater-than>
+          <property>/gear/gear[0]/position-norm</property>
+          <value>0.9</value>
+        </greater-than>
+      </condition>
+      <reference-dist>100</reference-dist>
+      <max-dist>1000</max-dist>
+    </gear>
+    
+    <wind>
+      <name>wind</name>
+      <mode>looped</mode>
+      <path>Aircraft/Pond-Racer/Sounds/wind.wav</path>
+      <property>/velocities/airspeed-kt</property>
+      <volume>
+        <property>/position/altitude-ft</property>
+        <factor> -0.000015 </factor>
+        <offset> 1.0 </offset>
+        <min> 0.1 </min>
+        <max> 1.0 </max>
+      </volume>
+      <volume>
+        <property>/velocities/airspeed-kt</property>
+        <factor> 0.0015 </factor>
+        <min> 0.01 </min>
+        <max> 0.04 </max>
+      </volume>
+      <pitch>
+        <property>/velocities/airspeed-kt</property>
+        <factor> 0.01 </factor>
+        <offset> 1.25 </offset>
+      </pitch>
+    </wind>
+    
+    <stall>
+      <name>stall</name>
+      <path>Aircraft/Pond-Racer/Sounds/stall_horn.wav</path>
+      <property>/sim/alarms/stall-warning</property>
+      <volume>
+        <property>/velocities/airspeed-kt</property>
+        <min> 30.0 </min>
+      </volume>
+      <reference-dist> 10.0 </reference-dist>
+      <max-dist> 20.0 </max-dist>
+    </stall>
+    
+  </fx>
+  
+</PropertyList>
